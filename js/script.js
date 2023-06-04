@@ -14,21 +14,38 @@ Posterin arxa fon şəkilini "bg.jpg" ilə dəyişin. Şəkil "img" qovluğunda 
 
 const movieDB = {
     movies: [
+        "Avatar 2",
+        "Bəyin oğurlanması",
         "logan",
         "titanic",
-        "Bəyin oğurlanması",
-        "Xaç atası",
-        "Avatar 2"
+        "Xaç atası"
     ]
 };
 
 
+// 2)
 
+const h1 = document.getElementById('h1');
+h1.innerHTML = 'Drama';
 
+const sekil = document.getElementById('sekil');
+sekil.style.backgroundImage = 'url(img/bg.jpg)';
+sekil.style.width = '100%';
+sekil.style.height = '400px';
 
+// 4)
 
+const birinci = document.getElementById('far1');
+birinci.innerHTML = 'Avatar 2';
 
+const ikinci = document.getElementById('far2');
+ikinci.innerHTML = 'Beyin ogurlanmasi';
 
+const ucuncu = document.getElementById('far3');
+ucuncu.innerHTML = 'Logan';
 
+const dorduncu = document.getElementById('far4');
+dorduncu.innerHTML = 'Titanic';
 
-
+const besinci = document.getElementById('far5');
+besinci.innerHTML = 'Xac atasi';
