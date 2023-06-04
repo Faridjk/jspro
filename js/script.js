@@ -36,16 +36,16 @@ sekil.style.height = '400px';
 // 4)
 
 const birinci = document.getElementById('far1');
-birinci.innerHTML = 'Avatar 2';
+birinci.innerHTML = '1. Avatar 2';
 
 const ikinci = document.getElementById('far2');
-ikinci.innerHTML = 'Beyin ogurlanmasi';
+ikinci.innerHTML = '2. Beyin ogurlanmasi';
 
 const ucuncu = document.getElementById('far3');
-ucuncu.innerHTML = 'Logan';
+ucuncu.innerHTML = '3. Logan';
 
 const dorduncu = document.getElementById('far4');
-dorduncu.innerHTML = 'Titanic';
+dorduncu.innerHTML = '4. Titanic';
 
 const besinci = document.getElementById('far5');
-besinci.innerHTML = 'Xac atasi';
+besinci.innerHTML = '5. Xac atasi';
