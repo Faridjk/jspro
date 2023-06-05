@@ -6,9 +6,9 @@
 2) Filmin janrını "Komediya"-dan на "Drama" -ya dəyişin
 Posterin arxa fon şəkilini "bg.jpg" ilə dəyişin. Şəkil "img" qovluğunda yerləşir. Bunun üçün ancaq JS-dən istifadə edin.
 
-4) Baxılmış kinoların siyahısını JS ilə silin, əlifbaya görə sıralayın.
+3) Baxılmış kinoların siyahısını JS ilə silin, əlifbaya görə sıralayın.
 
-5) "movieDB"-də olan kino adları ilə əvəz edirik (stili HTML-dən götürün) və əlavə edilmiş kino adları nömrələnsin */
+4) "movieDB"-də olan kino adları ilə əvəz edirik (stili HTML-dən götürün) və əlavə edilmiş kino adları nömrələnsin */
 
 'use strict';
 
@@ -22,6 +22,17 @@ const movieDB = {
     ]
 };
 
+// 1)
+
+const silmek = document.querySelector('.promo__adv-title');
+silmek.textContent = '';
+const img = document.querySelectorAll('.img');
+img[0].src = '';
+img[0].alt = '';
+img[1].src = '';
+img[1].alt = '';
+img[2].src = '';
+img[2].alt = '';
 
 // 2)
 
@@ -33,19 +44,22 @@ sekil.style.backgroundImage = 'url(img/bg.jpg)';
 sekil.style.width = '100%';
 sekil.style.height = '400px';
 
-// 4)
+// 3)
 
-const birinci = document.getElementById('far1');
-birinci.innerHTML = '1. Avatar 2';
+const sortirovka = document.querySelectorAll('.promo__interactive-item');
+let arr = [];
+sortirovka.forEach((i) => {
+    arr.push(i.innerHTML);
+    i.innerHTML = '';
+});
 
-const ikinci = document.getElementById('far2');
-ikinci.innerHTML = '2. Beyin ogurlanmasi';
+const sorted = arr.sort();
+let result = '';
+let k = 1;
 
-const ucuncu = document.getElementById('far3');
-ucuncu.innerHTML = '3. Logan';
+sorted.forEach((j) => {
+    result += `<li>${k}.${j}</li> <br>`;
+    k++;
+});
+document.querySelector('.promo__interactive-list').innerHTML = result;
 
-const dorduncu = document.getElementById('far4');
-dorduncu.innerHTML = '4. Titanic';
-
-const besinci = document.getElementById('far5');
-besinci.innerHTML = '5. Xac atasi';
