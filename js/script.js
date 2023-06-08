@@ -12,54 +12,42 @@ Posterin arxa fon şəkilini "bg.jpg" ilə dəyişin. Şəkil "img" qovluğunda 
 
 'use strict';
 
-const movieDB = {
-    movies: [
-        "Avatar 2",
-        "Bəyin oğurlanması",
-        "logan",
-        "titanic",
-        "Xaç atası"
-    ]
-};
-
 // 1)
 
 const silmek = document.querySelector('.promo__adv-title');
 silmek.textContent = '';
+
 const img = document.querySelectorAll('.img');
-img[0].src = '';
-img[0].alt = '';
-img[1].src = '';
-img[1].alt = '';
-img[2].src = '';
-img[2].alt = '';
+img.forEach(el => {
+    el.remove()
+});
 
 // 2)
 
 const h1 = document.getElementById('h1');
 h1.innerHTML = 'Drama';
 
-const sekil = document.getElementById('sekil');
+const sekil = document.querySelector('.promo__bg');
 sekil.style.backgroundImage = 'url(img/bg.jpg)';
-sekil.style.width = '100%';
-sekil.style.height = '400px';
 
+const movieDB = {
+    movies: [
+        "titanic",
+        "Avatar 2",
+        "Bəyin oğurlanması",
+        "logan",
+        "Xaç atası"
+    ]
+};
 // 3)
+const del = document.querySelector('.promo__interactive-list');
+del.innerHTML = '';
+movieDB.movies.sort();
+// 4)
 
-const sortirovka = document.querySelectorAll('.promo__interactive-item');
-let arr = [];
-sortirovka.forEach((i) => {
-    arr.push(i.innerHTML);
-    i.innerHTML = '';
+movieDB.movies.forEach((i, index) => {
+    del.innerHTML += `<li class="promo__interactive-item"> ${index + 1}) ${i}
+    <div class="delete"></div>
+    </li>`;
 });
-
-const sorted = arr.sort();
-let result = '';
-let k = 1;
-
-sorted.forEach((j) => {
-    result += `<li>${k}.${j}</li> <br>`;
-    k++;
-});
-document.querySelector('.promo__interactive-list').innerHTML = result;
 
