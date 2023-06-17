@@ -14,21 +14,26 @@ Posterin arxa fon şəkilini "bg.jpg" ilə dəyişin. Şəkil "img" qovluğunda 
 
 // 1)
 
-const silmek = document.querySelector('.promo__adv-title');
-silmek.textContent = '';
 
-const img = document.querySelectorAll('.img');
-img.forEach(el => {
-    el.remove()
-});
+function deleteAdv() {
+    const silmek = document.querySelector('.promo__adv-title');
+    silmek.textContent = '';
+    const img = document.querySelectorAll('.img');
+    img.forEach(el => {
+        el.remove()
+    });
+}
+deleteAdv();
+
 
 // 2)
-
-const h1 = document.getElementById('h1');
-h1.innerHTML = 'Drama';
-
-const sekil = document.querySelector('.promo__bg');
-sekil.style.backgroundImage = 'url(img/bg.jpg)';
+function saytDeyis() {
+    const h1 = document.getElementById('h1');
+    h1.innerHTML = 'Drama';
+    const sekil = document.querySelector('.promo__bg');
+    sekil.style.backgroundImage = 'url(img/bg.jpg)';
+}
+saytDeyis();
 
 const movieDB = {
     movies: [
@@ -42,12 +47,17 @@ const movieDB = {
 // 3)
 const del = document.querySelector('.promo__interactive-list');
 del.innerHTML = '';
-movieDB.movies.sort();
+function sortArr() {
+    movieDB.movies.sort();
+}
+sortArr();
 // 4)
-
-movieDB.movies.forEach((i, index) => {
-    del.innerHTML += `<li class="promo__interactive-item"> ${index + 1}) ${i}
+function createMovieList() {
+    movieDB.movies.forEach((i, index) => {
+        del.innerHTML += `<li class="promo__interactive-item"> ${index + 1}) ${i}
     <div class="delete"></div>
     </li>`;
-});
+    });
+}
+createMovieList();
 
