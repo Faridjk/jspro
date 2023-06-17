@@ -61,3 +61,20 @@ function createMovieList() {
 }
 createMovieList();
 
+const button = document.querySelector('button');
+button.addEventListener('submit', () => {
+    preventDefault();
+});
+
+const addForm = document.querySelector('form');
+const addInput = document.querySelector('input');
+const addCheckbox = document.querySelector('checkbox');
+
+
+// addCheckbox.addEventListener('click', (event) => {
+//     if (event.target.checked) {
+//         console.log(true);
+//     } else{
+//         console.log(false);
+//     }
+// })
